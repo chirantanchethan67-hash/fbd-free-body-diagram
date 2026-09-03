@@ -147,6 +147,176 @@ export const TASKS: FbdTask[] = [
     answer: { down: { type: "Fgrav", mag: 2 } },
     hint: "Once released, the only force on the ball is gravity, no matter which way it moves.",
   },
+  {
+    object: "sled",
+    prompt: "A {obj} is pulled rightward by a rope across a rough, level snowfield at a constant speed.",
+    answer: {
+      down: { type: "Fgrav", mag: 2 },
+      up: { type: "Fnorm", mag: 2 },
+      right: { type: "Ftens", mag: 2 },
+      left: { type: "Ffrict", mag: 2 },
+    },
+    hint: "A rope pulls with tension; constant speed means opposite forces are equal.",
+  },
+  {
+    object: "chandelier",
+    prompt: "A {obj} hangs motionless from a chain attached to the ceiling.",
+    answer: {
+      up: { type: "Ftens", mag: 2 },
+      down: { type: "Fgrav", mag: 2 },
+    },
+    hint: "Motionless means balanced: chain tension up equals gravity down.",
+  },
+  {
+    object: "book",
+    prompt: "A {obj} is being pushed rightward across a level table but is slowing down.",
+    answer: {
+      down: { type: "Fgrav", mag: 2 },
+      up: { type: "Fnorm", mag: 2 },
+      right: { type: "Fapp", mag: 1 },
+      left: { type: "Ffrict", mag: 3 },
+    },
+    hint: "Slowing while moving rightward means the leftward friction force is larger.",
+  },
+  {
+    object: "rock",
+    prompt: "A {obj} is falling through the air and encountering air resistance while speeding up.",
+    answer: {
+      down: { type: "Fgrav", mag: 3 },
+      up: { type: "Fair", mag: 1 },
+    },
+    hint: "Speeding up downward: gravity outweighs air resistance.",
+  },
+  {
+    object: "toy car",
+    prompt: "A {obj} rolls rightward across a frictionless, level surface at a constant speed.",
+    answer: {
+      down: { type: "Fgrav", mag: 2 },
+      up: { type: "Fnorm", mag: 2 },
+    },
+    hint: "No friction and no push: only vertical forces act, and they balance.",
+  },
+  {
+    object: "bucket",
+    prompt: "A {obj} of water is lowered by a rope, slowing down as it approaches the ground.",
+    answer: {
+      up: { type: "Ftens", mag: 3 },
+      down: { type: "Fgrav", mag: 2 },
+    },
+    hint: "Slowing while moving down means the net force points upward.",
+  },
+  {
+    object: "box",
+    prompt: "A {obj} sits at rest on a level floor while a person pushes rightward, but it does not budge.",
+    answer: {
+      down: { type: "Fgrav", mag: 2 },
+      up: { type: "Fnorm", mag: 2 },
+      right: { type: "Fapp", mag: 2 },
+      left: { type: "Ffrict", mag: 2 },
+    },
+    hint: "At rest means all forces balance, including friction against the push.",
+  },
+  {
+    object: "mass",
+    prompt: "A {obj} hangs at rest from the bottom of a stretched vertical spring.",
+    answer: {
+      up: { type: "Fspring", mag: 2 },
+      down: { type: "Fgrav", mag: 2 },
+    },
+    hint: "A stretched spring pulls upward with a spring force equal to gravity when at rest.",
+  },
+  {
+    object: "arrow",
+    prompt: "An {obj} has left the bow and is flying upward and rightward. Ignore air resistance.",
+    answer: { down: { type: "Fgrav", mag: 2 } },
+    hint: "After release, only gravity acts on a projectile with no air resistance.",
+  },
+  {
+    object: "feather",
+    prompt: "A {obj} drifts downward through the air at a constant slow speed.",
+    answer: {
+      down: { type: "Fgrav", mag: 2 },
+      up: { type: "Fair", mag: 2 },
+    },
+    hint: "Constant speed means air resistance exactly balances gravity.",
+  },
+  {
+    object: "truck",
+    prompt: "A {obj} accelerates rightward down a level highway while experiencing air resistance.",
+    answer: {
+      down: { type: "Fgrav", mag: 2 },
+      up: { type: "Fnorm", mag: 2 },
+      right: { type: "Fapp", mag: 3 },
+      left: { type: "Fair", mag: 1 },
+    },
+    hint: "Speeding up rightward: the forward applied force beats the backward air resistance.",
+  },
+  {
+    object: "crate",
+    prompt: "A {obj} slides leftward across a rough floor and gradually comes to a stop.",
+    answer: {
+      down: { type: "Fgrav", mag: 2 },
+      up: { type: "Fnorm", mag: 2 },
+      right: { type: "Ffrict", mag: 2 },
+    },
+    hint: "Friction opposes motion, so it points rightward when the crate moves leftward.",
+  },
+  {
+    object: "parachutist",
+    prompt: "A {obj} has just opened her chute and is slowing down as she falls.",
+    answer: {
+      down: { type: "Fgrav", mag: 1 },
+      up: { type: "Fair", mag: 3 },
+    },
+    hint: "Slowing while falling means the upward air resistance is larger than gravity.",
+  },
+  {
+    object: "wagon",
+    prompt: "A {obj} is pulled rightward by a horizontal handle across a rough sidewalk and speeds up.",
+    answer: {
+      down: { type: "Fgrav", mag: 2 },
+      up: { type: "Fnorm", mag: 2 },
+      right: { type: "Ftens", mag: 3 },
+      left: { type: "Ffrict", mag: 1 },
+    },
+    hint: "A handle or rope pull is a tension force; speeding up means it beats friction.",
+  },
+  {
+    object: "book",
+    prompt: "A {obj} is held at rest against a vertical wall by a horizontal push toward the wall.",
+    answer: {
+      down: { type: "Fgrav", mag: 2 },
+      up: { type: "Ffrict", mag: 2 },
+      right: { type: "Fapp", mag: 2 },
+      left: { type: "Fnorm", mag: 2 },
+    },
+    hint: "The wall pushes back with a normal force, and friction along the wall holds the book up.",
+  },
+  {
+    object: "ball",
+    prompt: "A {obj} is at the very peak of its trajectory after being thrown. Ignore air resistance.",
+    answer: { down: { type: "Fgrav", mag: 2 } },
+    hint: "Even at the peak, gravity is still the only force acting.",
+  },
+  {
+    object: "block",
+    prompt: "A {obj} is compressed against a horizontal spring on a frictionless table and is pushed rightward.",
+    answer: {
+      down: { type: "Fgrav", mag: 2 },
+      up: { type: "Fnorm", mag: 2 },
+      right: { type: "Fspring", mag: 2 },
+    },
+    hint: "The spring supplies the horizontal push; there is no friction to oppose it.",
+  },
+  {
+    object: "climber",
+    prompt: "A {obj} hangs at rest from a rope, gripping it with both hands.",
+    answer: {
+      up: { type: "Ftens", mag: 2 },
+      down: { type: "Fgrav", mag: 2 },
+    },
+    hint: "The rope's tension balances the climber's weight.",
+  },
 ];
 
 export const DIRS: { dir: Dir; label: string }[] = [
