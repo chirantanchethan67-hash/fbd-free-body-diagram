@@ -46,6 +46,7 @@ type Feedback =
 const STORAGE_KEY = "fbd-task-tracker";
 
 function Index() {
+  const [started, setStarted] = useState(false);
   const [current, setCurrent] = useState(0);
   const [completed, setCompleted] = useState<boolean[]>(
     Array(TASKS.length).fill(false),
