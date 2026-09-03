@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import { Diagram } from "@/components/fbd/Diagram";
 import { Sidebar } from "@/components/fbd/Sidebar";
+import { SplashScreen } from "@/components/fbd/SplashScreen";
 import {
   DIRS,
   FORCE_LABELS,
@@ -148,7 +149,9 @@ function Index() {
       STORAGE_KEY,
       JSON.stringify({ completed, health, current }),
     );
-    setFeedback({ kind: "saved" });
+    setFeedback(null);
+    setSelectedDir(null);
+    setStarted(false);
   }
 
   function dismiss() {
