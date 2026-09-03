@@ -21,13 +21,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Build free-body diagrams for 12 physics scenarios: pick force directions, name the force types, size the arrows, and check your answer.",
+          "Build free-body diagrams for 30 physics scenarios: pick force directions, name the force types, size the arrows, and check your answer.",
       },
       { property: "og:title", content: "Free-Body Diagrams with Task Tracker" },
       {
         property: "og:description",
         content:
-          "Interactive free-body diagram practice with a 12-task progress tracker, health bar, and instant feedback.",
+          "Interactive free-body diagram practice with a 30-task progress tracker, health bar, and instant feedback.",
       },
     ],
   }),

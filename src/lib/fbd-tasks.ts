@@ -262,14 +262,13 @@ export const TASKS: FbdTask[] = [
     hint: "Friction opposes motion, so it points rightward when the crate moves leftward.",
   },
   {
-    object: "balloon",
-    prompt: "A helium {obj} tied to a string floats motionless above a table.",
+    object: "parachutist",
+    prompt: "A {obj} has just opened her chute and is slowing down as she falls.",
     answer: {
-      down: { type: "Ftens", mag: 2 },
+      down: { type: "Fgrav", mag: 1 },
       up: { type: "Fair", mag: 3 },
-      // gravity also acts downward on the balloon
     },
-    hint: "The buoyant air force lifts upward while the string tension and gravity pull down.",
+    hint: "Slowing while falling means the upward air resistance is larger than gravity.",
   },
   {
     object: "wagon",
