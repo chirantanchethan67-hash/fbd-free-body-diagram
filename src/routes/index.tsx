@@ -70,7 +70,7 @@ function Index() {
     }
   }, []);
 
-  const task = TASKS[current];
+  const task = TASKS[current]!;
   const done = completed.filter(Boolean).length;
   const progress = Math.round((done / TASKS.length) * 100);
 
