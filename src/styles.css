@@ -78,8 +78,17 @@
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
+  --fbd-red: oklch(0.628 0.257 29.2);
+  --fbd-yellow: oklch(0.945 0.19 103);
+  --fbd-green: oklch(0.79 0.26 143);
+  --fbd-panel: oklch(0.85 0 0);
+  --fbd-button: oklch(0.94 0 0);
+  --fbd-outline: oklch(0.72 0 0);
+  --fbd-ink: oklch(0 0 0);
+  --font-fbd-stack: Helvetica, Arial, "Liberation Sans", sans-serif;
   --primary: oklch(0.208 0.042 265.755);
   --primary-foreground: oklch(0.984 0.003 247.858);
+
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
