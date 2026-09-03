@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import { Diagram } from "@/components/fbd/Diagram";
 import { Sidebar } from "@/components/fbd/Sidebar";
+import { SplashScreen } from "@/components/fbd/SplashScreen";
 import {
   DIRS,
   FORCE_LABELS,
@@ -46,6 +47,7 @@ type Feedback =
 const STORAGE_KEY = "fbd-task-tracker";
 
 function Index() {
+  const [started, setStarted] = useState(false);
   const [current, setCurrent] = useState(0);
   const [completed, setCompleted] = useState<boolean[]>(
     Array(TASKS.length).fill(false),
@@ -147,7 +149,9 @@ function Index() {
       STORAGE_KEY,
       JSON.stringify({ completed, health, current }),
     );
-    setFeedback({ kind: "saved" });
+    setFeedback(null);
+    setSelectedDir(null);
+    setStarted(false);
   }
 
   function dismiss() {
@@ -162,9 +166,20 @@ function Index() {
 
   const promptParts = task.prompt.split("{obj}");
 
+  if (!started) {
+    return (
+      <main className="flex min-h-screen items-center justify-center bg-background p-4 font-fbd text-fbd-ink">
+        <div className="flex w-full max-w-[1180px] border-[3px] border-fbd-ink">
+          <SplashScreen onStart={() => setStarted(true)} />
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main className="flex min-h-screen items-center justify-center bg-background p-4 font-fbd text-fbd-ink">
       <div className="flex w-full max-w-[1180px] border-[3px] border-fbd-ink">
+
         {/* Left: activity */}
         <section className="flex min-w-0 flex-1 flex-col">
           <h1 className="border-b-[3px] border-fbd-ink px-3 py-2 text-[17px] font-bold text-fbd-red">
